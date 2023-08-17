@@ -22,6 +22,14 @@
 
 
 **redux core concept**
+
+**Steps**
+   * 1. state
+   * 2. dispatch action
+   * 3. reducer (based on action type)
+   * 4. store
+
+
   * State: consider what states you want to manage
   ```
 // state
@@ -79,3 +87,29 @@ const  addUser =() =>{
 
   
   ```
+
+
+
+```
+//Create reducer for counter
+// Reducer = make to pure function
+// sob logic hadnle korbe 
+const counterReducer = (state = initialCounterState, action) => {
+  switch (action.type) {
+    case INCREMENT:
+      return {
+        ...state,
+        count: state.count + 1,
+      };
+
+    case DECREMENT:
+      return {
+        ...state,
+        count: state.count - 1,
+      };
+
+    default:
+      state;
+  }
+};
+```
