@@ -1,6 +1,5 @@
 **Redux-ReduxToolkit**
 
-
 **1. What is Redux & why Redux?**
    * A small JS Library
    * for managing medium/large amount of states globally in your app.
@@ -112,4 +111,24 @@ const counterReducer = (state = initialCounterState, action) => {
       state;
   }
 };
+```
+
+
+**create store**
+```
+//create store
+
+const store = createStore(counterReducer)
+
+store.subscribe (() =>{
+  console.log(store.getState())
+})
+
+//dispatch action
+store.dispatch(incrementCounter())
+store.dispatch(incrementCounter())
+store.dispatch(incrementCounter())
+store.dispatch(decrementCounter())
+store.dispatch(decrementCounter())
+
 ```
